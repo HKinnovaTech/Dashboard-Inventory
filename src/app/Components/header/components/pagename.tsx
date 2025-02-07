@@ -5,7 +5,7 @@ import Functionbutton from './functionbutton';
 const pagename = () => {
   const pathname = usePathname() || "";
   const getPageTitle = (path: string) => {
-    if (path === "/") return "Home";
+    if (path === "/") return "WELCOME!";
     return path
       .replace("/", "")
       .replace(/-/g, " ")
@@ -13,18 +13,9 @@ const pagename = () => {
   };
 
   return (
-    <div className=''>
-      <div className='flex justify-center items-center'>
-      <h1>{getPageTitle(pathname)}</h1>
-      <div className='absolute right-16 flex gap-8'>
-        <Functionbutton icon="night"/>
-        <Functionbutton icon="night"/>
-        <Functionbutton icon="night"/>
-        <Functionbutton icon="night"/>
-      </div>
-    </div>
-    </div>
-  )
+        <h1 className="font-bold text-xl">{getPageTitle(pathname)}</h1>
+  );
+  
 }
 
 export default pagename
