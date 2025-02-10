@@ -13,7 +13,7 @@ const pagename = () => {
   };
 
   return (
-        <h1 className="font-bold text-xl">{getPageTitle(pathname)}</h1>
+        <h1 className="font-bold text-l dark:text-white">{getPageTitle(pathname)}</h1>
   );
   
 }
