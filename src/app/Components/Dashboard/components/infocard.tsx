@@ -1,12 +1,11 @@
 import React from "react";
-import { FaCaretDown } from "react-icons/fa";
 import { FaCaretUp } from "react-icons/fa6";
 
 const InfoCard = () => {
   return (
     <div className="w-[362px] h-[172px] bg-primary shadow-lg rounded-xl overflow-hidden flex flex-col justify-between">
-      <div className="flex items-center justify-between p-8">
-        <div>
+      <div className="flex items-center justify-between p-7 ">
+        <div className="bg-[#ffdacb]/90 rounded-xl p-3">
           <img src="/images/bucket.png" alt="Bucket" className="w-12 h-12" />
         </div>
         <div>
@@ -15,7 +14,7 @@ const InfoCard = () => {
         </div>
       </div>
 
-      <div className="flex justify-between items-center bg-secoundary p-3">
+      <div className="flex justify-between items-center bg-secoundary py-3 px-7">
         <div className="flex gap-3 text-sm">
           <div className="flex items-center space-x-1 text-green-500">
             <FaCaretUp size={18} />
