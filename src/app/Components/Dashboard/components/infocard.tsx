@@ -14,7 +14,7 @@ const InfoCard = () => {
         </div>
       </div>
 
-      <div className="flex justify-between items-center">
+      <div className="flex justify-between items-center bg-secoundary">
         <div className="flex gap-3 text-sm">
         <div className="flex items-center space-x-1 text-green-500">
           <FaCaretUp size={18} />
