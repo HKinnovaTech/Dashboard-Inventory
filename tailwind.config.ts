@@ -13,7 +13,8 @@ export default {
         primary: "var(--primary)",
         secoundary: "var(--secoundary)",
         textcolor: "var(--text)",
-        hilights: "var(--hilights)" 
+        hilights: "var(--hilights)",
+        tertiary: "var(--tertiary)"
       },
     },
   },

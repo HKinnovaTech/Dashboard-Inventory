@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import Functionbutton from "./functionbutton";
 
 const ThemeToggle = () => {
   const [theme, setTheme] = useState<"light" | "dark">("light");
@@ -28,7 +27,7 @@ const ThemeToggle = () => {
   return (
     <button
       onClick={toggleTheme}
-      className=" transition duration-300"
+      className=" transition duration-900"
     >
        {theme === "dark" ? (
                 <img src={`/images/light.png`} alt="" className="w-5 grayscale hover:grayscale-0 transition duration-300"/>
