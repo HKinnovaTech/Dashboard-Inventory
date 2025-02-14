@@ -11,7 +11,15 @@
     --hilights: #ffb495;
     --tertiary: #eae8e8;
   }
-  
+
+  html.dark {
+    --background: #22282eff;
+    --primary: #282f36ff;
+    --secoundary: #2c343e;
+    --foreground: #aab8c5;
+    --hilights: #ffb495;
+    --tertiary: #2c3238;
+  }
 }
 
 body {
@@ -20,19 +28,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.dark {
-  --background: #22282eff;
-  --primary: #282f36ff;
-  --secoundary: #2c343e;
-  --foreground: #aab8c5;
-  --hilights: #ffb495;
-  --tertiary: #2c3238;
-}
-.light {
-  --background: #f9f7f7;
-  --primary: #ffffff;
-  --secoundary: #f6f8fb;
-  --foreground: #313b5e;
-  --hilights: #ffb495;
-  --tertiary: #eae8e8;
+
+.bodycontainer{
+  margin: 0 48px;
 }

@@ -1,9 +1,10 @@
 import React from 'react'
 import Dashboard from './Components/Dashboard/Dashboard'
+import './globals.css';
 
 const page = () => {
   return (
-    <div className="container">
+    <div className="bodycontainer">
       <Dashboard/>
     </div>
   )
