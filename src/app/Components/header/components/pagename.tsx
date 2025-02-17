@@ -1,6 +1,5 @@
 import React from 'react'
 import { usePathname } from "next/navigation";
-import Functionbutton from './functionbutton';
 
 const pagename = () => {
   const pathname = usePathname() || "";
@@ -13,7 +12,7 @@ const pagename = () => {
   };
 
   return (
-        <h1 className="font-bold text-l text-textcolor">{getPageTitle(pathname)}</h1>
+        <h1 className="font-bold text-lg text-textcolor">{getPageTitle(pathname)}</h1>
   );
   
 }

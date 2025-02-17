@@ -10,7 +10,7 @@ const InfoCard = (props) => {
         </div>
         <div>
           <p className="text-textcolor">Total Orders</p>
-          <h2 className="text-2xl font-semibold">12,340</h2>
+          <h2 className="text-3xl font-semibold">12,340</h2>
         </div>
       </div>
 

@@ -2,7 +2,7 @@ import React from "react";
 
 const navbar = () => {
   return (
-    <div className=" min-w-[280px] bg-[#262d34] h-screen">
+    <div className="sticky top-0 min-w-[280px] bg-[#262d34] h-screen">
       <div className="m-8">
         <div>
           <img src="/images/logo.png" alt="LOGO" className="h-10" />
