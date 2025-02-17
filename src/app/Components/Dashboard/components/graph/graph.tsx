@@ -4,17 +4,18 @@ import React, { useState, useEffect, useMemo } from "react";
 import Chart from "react-apexcharts";
 import "../../../../globals.css";
 
+//NEED TO FIX COLOR THEME******************************************************
 const getThemeColors = () => {
   const root = document.documentElement;
   const colors = {
     primary: getComputedStyle(root).getPropertyValue("--primary").trim(),
-    secondary: getComputedStyle(root).getPropertyValue("--secoundary").trim(), // Ensure correct spelling in CSS
+    secondary: getComputedStyle(root).getPropertyValue("--secoundary").trim(), 
     bar: "#ff6c2f",
     tertiary: getComputedStyle(root).getPropertyValue("--tertiary").trim(),
     background: getComputedStyle(root).getPropertyValue("--background").trim(),
   };
 
-  console.log("Updated Theme Colors:", colors); // ✅ Logs theme colors
+  console.log("Updated Theme Colors:", colors); 
   return colors;
 };
 
@@ -31,7 +32,7 @@ const Graph: React.FC = () => {
     const updateThemeColors = () => {
       const newColors = getThemeColors();
       setThemeColors(newColors);
-      console.log("Theme Colors Updated in State:", newColors); // ✅ Logs theme colors in state
+      console.log("Theme Colors Updated in State:", newColors);
     };
 
     updateThemeColors(); // Set colors on mount
@@ -83,7 +84,7 @@ const Graph: React.FC = () => {
       plotOptions: {
         bar: {
           borderRadius: 5,
-          columnWidth: "40%",
+          columnWidth: "30%",
         },
       },
       grid: {
@@ -97,7 +98,7 @@ const Graph: React.FC = () => {
         },
       },
     }),
-    [themeColors] // Recompute options when colors change
+    [themeColors] 
   );
 
   const series = [
@@ -108,7 +109,7 @@ const Graph: React.FC = () => {
   ];
 
   return (
-    <div className="app bg-primary p-4 rounded-lg max-w-[853px]">
+    <div className="app bg-primary p-4 rounded-xl shadow-lg w-full">
       <div className="row">
         <div className="mixed-chart w-full h-auto">
           <Chart options={options} series={series} type="bar" width="100%" height="393" />
