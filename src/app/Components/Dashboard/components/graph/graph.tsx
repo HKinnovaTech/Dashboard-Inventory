@@ -1,67 +1,104 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import Chart from "react-apexcharts";
-import '../../../../globals.css';
-
+import "../../../../globals.css";
 
 const getThemeColors = () => {
   const root = document.documentElement;
-  return {
+  const colors = {
     primary: getComputedStyle(root).getPropertyValue("--primary").trim(),
-    secondary: getComputedStyle(root).getPropertyValue("--secondary").trim(), 
+    secondary: getComputedStyle(root).getPropertyValue("--secoundary").trim(), // Ensure correct spelling in CSS
     bar: "#ff6c2f",
     tertiary: getComputedStyle(root).getPropertyValue("--tertiary").trim(),
-    background: getComputedStyle(root).getPropertyValue("--background").trim() 
+    background: getComputedStyle(root).getPropertyValue("--background").trim(),
   };
-};
-const Graph: React.FC = () => {
 
-  const [themeColors, setThemeColors] = useState(getThemeColors());
+  console.log("Updated Theme Colors:", colors); // ✅ Logs theme colors
+  return colors;
+};
+
+const Graph: React.FC = () => {
+  const [themeColors, setThemeColors] = useState({
+    primary: "",
+    secondary: "",
+    bar: "#ff6c2f",
+    tertiary: "",
+    background: "",
+  });
 
   useEffect(() => {
-    const updateThemeColors = () => setThemeColors(getThemeColors());
+    const updateThemeColors = () => {
+      const newColors = getThemeColors();
+      setThemeColors(newColors);
+      console.log("Theme Colors Updated in State:", newColors); // ✅ Logs theme colors in state
+    };
 
-    window.addEventListener("DOMContentLoaded", updateThemeColors);
-    window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", updateThemeColors);
+    updateThemeColors(); // Set colors on mount
+
+    // Listen for dark mode changes
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+    mediaQuery.addEventListener("change", updateThemeColors);
 
     return () => {
-      window.removeEventListener("DOMContentLoaded", updateThemeColors);
-      window.matchMedia("(prefers-color-scheme: dark)").removeEventListener("change", updateThemeColors);
+      mediaQuery.removeEventListener("change", updateThemeColors);
     };
   }, []);
 
-  const options = {
-    chart: {
-      id: "sales-chart",
-    },
-    xaxis: {
-      categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-      labels: {
-        style: {
-          colors: themeColors.secondary, 
-          fontSize: "14px",
-          fontWeight: 500,
+  const options = useMemo(
+    () => ({
+      chart: {
+        id: "sales-chart",
+      },
+      xaxis: {
+        categories: [
+          "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+          "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
+        ],
+        labels: {
+          style: {
+            colors: themeColors.bar,
+            fontSize: "14px",
+            fontWeight: 500,
+          },
         },
       },
-    },
-    colors: [themeColors.bar],
-    plotOptions: {
-      bar: {
-        borderRadius: 5,
+      yaxis: {
+        labels: {
+          style: {
+            colors: themeColors.bar,
+            fontSize: "14px",
+            fontWeight: 500,
+          },
+        },
       },
-    },
-    grid: {
-      borderColor: themeColors.primary,
-      strokeDashArray: 5,
-      opacity: 0.7,
-    },
-    tooltip: {
-      style: {
-        fontSize: "14px",
+      dataLabels: {
+        style: {
+          colors: [themeColors.bar],
+          fontSize: "14px",
+          fontWeight: "500",
+        },
       },
-    },
-  };
+      colors: [themeColors.bar],
+      plotOptions: {
+        bar: {
+          borderRadius: 5,
+          columnWidth: "40%",
+        },
+      },
+      grid: {
+        borderColor: themeColors.primary,
+        strokeDashArray: 5,
+        opacity: 0.7,
+      },
+      tooltip: {
+        style: {
+          fontSize: "14px",
+        },
+      },
+    }),
+    [themeColors] // Recompute options when colors change
+  );
 
   const series = [
     {
