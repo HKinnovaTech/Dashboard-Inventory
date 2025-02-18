@@ -109,9 +109,9 @@ const Graph: React.FC = () => {
   ];
 
   return (
-    <div className="app bg-primary p-4 rounded-xl shadow-lg w-full">
+    <div className="app bg-primary p-5 rounded-xl shadow-lg w-full -z-50">
       <div className="row">
-        <div className="mixed-chart w-full h-auto">
+        <div className="mixed-chart w-full">
           <Chart options={options} series={series} type="bar" width="100%" height="393" />
         </div>
       </div>

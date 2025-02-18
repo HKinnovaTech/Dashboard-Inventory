@@ -4,9 +4,9 @@ import Graph from "./components/graph/graph";
 
 const Dashboard = () => {
   return (
-    <div className="flex flex-row lg:flex-col gap-6 items-end justify-center">
+    <div className="flex flex-row gap-6 items-start justify-center">
       <div className="w-full">
-        <div className="w-full bg-[#ffdacb]/90 text-[#972b51] rounded-xl p-3 text-sm my-5">
+        <div className="w-full bg-[#ffdacb]/90 text-[#972b51] rounded-xl p-3 text-sm mb-5">
           <p>We regret to inform you that our server is currently experiencing technical difficulties.</p>
         </div>
         <div className="grid grid-cols-2 gap-5">
