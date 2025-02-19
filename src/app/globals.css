@@ -8,8 +8,9 @@
     --primary: #ffffff;
     --secoundary: #f6f8fb;
     --foreground: #313b5e;
-    --hilights: #ffb495;
+    --hilights: #ffe2d5;
     --tertiary: #eae8e8;
+    --messagetext: #972b13;
   }
 
   html.dark {
@@ -17,8 +18,9 @@
     --primary: #282f36ff;
     --secoundary: #2c343e;
     --foreground: #aab8c5;
-    --hilights: #ffb495;
+    --hilights: #5e3e34;
     --tertiary: #2c3238;
+    --messagetext: #ff9c5e;
   }
 }
 

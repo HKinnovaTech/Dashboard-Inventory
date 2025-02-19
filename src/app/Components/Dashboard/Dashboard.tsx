@@ -4,12 +4,12 @@ import Graph from "./components/graph/graph";
 
 const Dashboard = () => {
   return (
-    <div className="flex flex-row gap-6 items-start justify-center">
-      <div className="w-full">
-        <div className="w-full bg-[#ffdacb]/90 text-[#972b51] rounded-xl p-3 text-sm mb-5">
+    <div className="flex flex-row min-md:flex-col gap-6 items-start justify-center">
+      <div className="w-full xl:w-[80%]">
+        <div className="w-full bg-hilights text-messagetext rounded-xl p-3 text-sm mb-5">
           <p>We regret to inform you that our server is currently experiencing technical difficulties.</p>
         </div>
-        <div className="grid grid-cols-2 gap-5">
+        <div className="grid grid-cols-2 gap-5 ">
           <Infocard />
           <Infocard />
           <Infocard />

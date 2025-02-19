@@ -14,7 +14,8 @@ export default {
         secoundary: "var(--secoundary)",
         textcolor: "var(--text)",
         hilights: "var(--hilights)",
-        tertiary: "var(--tertiary)"
+        tertiary: "var(--tertiary)",
+        messagetext: "var(--messagetext)"
       },
     },
   },

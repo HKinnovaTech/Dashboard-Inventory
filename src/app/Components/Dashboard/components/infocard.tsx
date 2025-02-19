@@ -5,7 +5,7 @@ const InfoCard = (props) => {
   return (
     <div className="h-[172px] bg-primary shadow-lg rounded-xl overflow-hidden flex flex-col justify-between">
       <div className="flex items-center justify-between p-7 ">
-        <div className="bg-[#ffdacb]/90 rounded-xl p-3">
+        <div className="bg-hilights rounded-xl p-3">
           <img src="/images/bucket.png" alt="Bucket" className="w-7 h-7" />
         </div>
         <div>

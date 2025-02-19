@@ -11,6 +11,7 @@ const getThemeColors = () => {
     primary: getComputedStyle(root).getPropertyValue("--primary").trim(),
     secondary: getComputedStyle(root).getPropertyValue("--secoundary").trim(), 
     bar: "#ff6c2f",
+    line: "#2c353e",
     tertiary: getComputedStyle(root).getPropertyValue("--tertiary").trim(),
     background: getComputedStyle(root).getPropertyValue("--background").trim(),
   };
@@ -26,6 +27,7 @@ const Graph: React.FC = () => {
     bar: "#ff6c2f",
     tertiary: "",
     background: "",
+    line: "#2c353e",
   });
 
   useEffect(() => {
@@ -50,6 +52,9 @@ const Graph: React.FC = () => {
     () => ({
       chart: {
         id: "sales-chart",
+        toolbar: {
+          show: false,
+        }
       },
       xaxis: {
         categories: [
@@ -60,7 +65,8 @@ const Graph: React.FC = () => {
           style: {
             colors: themeColors.bar,
             fontSize: "14px",
-            fontWeight: 500,
+            fontFamily: "inherit",
+            fontWeight: 400,
           },
         },
       },
@@ -83,19 +89,19 @@ const Graph: React.FC = () => {
       colors: [themeColors.bar],
       plotOptions: {
         bar: {
-          borderRadius: 5,
+          borderRadius: 3,
           columnWidth: "30%",
         },
       },
       grid: {
-        borderColor: themeColors.primary,
+        borderColor: themeColors.line,
         strokeDashArray: 5,
         opacity: 0.7,
       },
       tooltip: {
-        style: {
-          fontSize: "14px",
-        },
+        enabled: true,
+        theme: "dark",
+
       },
     }),
     [themeColors] 
@@ -109,7 +115,7 @@ const Graph: React.FC = () => {
   ];
 
   return (
-    <div className="app bg-primary p-5 rounded-xl shadow-lg w-full -z-50">
+    <div className="app bg-primary py-5 xl:p-2.5 rounded-xl shadow-lg w-full -z-50">
       <div className="row">
         <div className="mixed-chart w-full">
           <Chart options={options} series={series} type="bar" width="100%" height="393" />
