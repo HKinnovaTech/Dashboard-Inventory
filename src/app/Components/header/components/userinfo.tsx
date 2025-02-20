@@ -21,7 +21,7 @@ const userinfo = () => {
       </button>
 
       <div
-        className={`absolute top-24 w-40 bg-primary border-2 border-secoundary text-textcolor shadow-lg rounded-lg overflow-hidden transform transition-all duration-500 ease-in-out ${
+        className={`absolute z-50 top-24 w-40 bg-primary border-2 border-secoundary text-textcolor shadow-lg rounded-lg overflow-hidden transform transition-all duration-500 ease-in-out ${
           isDropdownOpen
             ? "translate-y-2 opacity-100"
             : "translate-y-0 opacity-0 pointer-events-none"

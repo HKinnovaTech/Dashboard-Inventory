@@ -37,9 +37,8 @@ const Graph: React.FC = () => {
       console.log("Theme Colors Updated in State:", newColors);
     };
 
-    updateThemeColors(); // Set colors on mount
+    updateThemeColors();   ``
 
-    // Listen for dark mode changes
     const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
     mediaQuery.addEventListener("change", updateThemeColors);
 
@@ -90,7 +89,8 @@ const Graph: React.FC = () => {
       plotOptions: {
         bar: {
           borderRadius: 3,
-          columnWidth: "30%",
+          columnWidth: "35%",
+          grouped: true,
         },
       },
       grid: {
@@ -115,7 +115,7 @@ const Graph: React.FC = () => {
   ];
 
   return (
-    <div className="app bg-primary py-5 xl:p-2.5 rounded-xl shadow-lg w-full -z-50">
+    <div className="app bg-primary lg:*:py-2.5 xl:p-2.5 rounded-xl shadow-lg w-full -z-10">
       <div className="row">
         <div className="mixed-chart w-full">
           <Chart options={options} series={series} type="bar" width="100%" height="393" />

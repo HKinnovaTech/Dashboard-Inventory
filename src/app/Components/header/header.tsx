@@ -7,9 +7,8 @@ import ThemeToggle from "./components/themebutton";
 import "../../globals.css";
 import Userinfo from "./components/userinfo";
 
-
 const Header = () => {
-  
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   return (
     <div className="w-full sticky top-0 py-7 bg-background  text-center flex justify-between items-center  px-12">
       <Pagename />
