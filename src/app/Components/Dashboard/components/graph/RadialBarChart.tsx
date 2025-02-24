@@ -38,7 +38,7 @@ const RadialBarChart: React.FC = () => {
         startAngle: -135,
         endAngle: 135,
         hollow: {
-          size: "60%",
+          size: "40%",
         },
         track: {
           background: secondaryColor, 

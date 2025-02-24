@@ -115,7 +115,7 @@ const Graph: React.FC = () => {
   ];
 
   return (
-    <div className="app bg-primary xl:p-2.5 rounded-xl shadow-lg w-full h-full -z-10">
+    <div className="app bg-primary rounded-xl shadow-lg w-full -z-10">
       <div className="row">
         <div className="mixed-chart w-full">
           <Chart
