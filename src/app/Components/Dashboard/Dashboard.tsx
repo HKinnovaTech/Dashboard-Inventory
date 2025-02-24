@@ -1,7 +1,7 @@
 import React from "react";
 import Infocard from "./components/infocard";
 import Graph from "./components/graph/graph";
-import CircularProgressBar from "./components/CircularProgressBar";
+import RadialBarChart from "./components/graph/RadialBarChart";
 
 const Dashboard = () => {
   return (
@@ -26,7 +26,7 @@ const Dashboard = () => {
       </div>
       <div className="flex items-center justify-between">
         <div>
-          <CircularProgressBar/>
+          <RadialBarChart/>
         </div>
         <div></div>
         <div></div>

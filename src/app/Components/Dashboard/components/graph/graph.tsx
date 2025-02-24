@@ -5,46 +5,37 @@ import Chart from "react-apexcharts";
 import "../../../../globals.css";
 
 //NEED TO FIX COLOR THEME******************************************************
-const getThemeColors = () => {
-  const root = document.documentElement;
-  const colors = {
-    primary: getComputedStyle(root).getPropertyValue("--primary").trim(),
-    secondary: getComputedStyle(root).getPropertyValue("--secoundary").trim(), 
-    bar: "#ff6c2f",
-    line: "#2c353e",
-    tertiary: getComputedStyle(root).getPropertyValue("--tertiary").trim(),
-    background: getComputedStyle(root).getPropertyValue("--background").trim(),
-  };
-
-  console.log("Updated Theme Colors:", colors); 
-  return colors;
-};
 
 const Graph: React.FC = () => {
-  const [themeColors, setThemeColors] = useState({
-    primary: "",
-    secondary: "",
-    bar: "#ff6c2f",
-    tertiary: "",
-    background: "",
-    line: "#2c353e",
-  });
+  const [primary, setprimary] = useState("");
+  const [secondary, setsecondary] = useState("");
+  const [tertiary, settertiary] = useState("");
+  const [background, setbackground] = useState("");
+  const [textcolor, settextcolor] = useState("");
+  const [bar, setbar] = useState("");
 
   useEffect(() => {
     const updateThemeColors = () => {
-      const newColors = getThemeColors();
-      setThemeColors(newColors);
-      console.log("Theme Colors Updated in State:", newColors);
+      const root = getComputedStyle(document.documentElement);
+      const primary = root.getPropertyValue("--primary").trim();
+      const secondary = root.getPropertyValue("--secoundary").trim();
+      const tertiary = root.getPropertyValue("--tertiary").trim();
+      const background = root.getPropertyValue("--background").trim();
+      const textcolor = root.getPropertyValue("--foreground").trim();
+      const bar = "#ff6c2f";
+      setprimary(primary);
+      setsecondary(secondary);
+      settertiary(tertiary);
+      setbackground(background);
+      settextcolor(textcolor); 
+      setbar(bar)
     };
 
-    updateThemeColors();   ``
+    updateThemeColors();
+    const observer = new MutationObserver(updateThemeColors);
+    observer.observe(document.documentElement, { attributes: true });
 
-    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-    mediaQuery.addEventListener("change", updateThemeColors);
-
-    return () => {
-      mediaQuery.removeEventListener("change", updateThemeColors);
-    };
+    return () => observer.disconnect();
   }, []);
 
   const options = useMemo(
@@ -53,16 +44,26 @@ const Graph: React.FC = () => {
         id: "sales-chart",
         toolbar: {
           show: false,
-        }
+        },
       },
       xaxis: {
         categories: [
-          "Jan", "Feb", "Mar", "Apr", "May", "Jun",
-          "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun",
+          "Jul",
+          "Aug",
+          "Sep",
+          "Oct",
+          "Nov",
+          "Dec",
         ],
         labels: {
           style: {
-            colors: themeColors.bar,
+            colors: textcolor,
             fontSize: "14px",
             fontFamily: "inherit",
             fontWeight: 400,
@@ -72,7 +73,7 @@ const Graph: React.FC = () => {
       yaxis: {
         labels: {
           style: {
-            colors: themeColors.bar,
+            colors: textcolor,
             fontSize: "14px",
             fontWeight: 500,
           },
@@ -80,12 +81,12 @@ const Graph: React.FC = () => {
       },
       dataLabels: {
         style: {
-          colors: [themeColors.bar],
-          fontSize: "14px",
+          colors: [bar],
+          fontSize: "10px",
           fontWeight: "500",
         },
       },
-      colors: [themeColors.bar],
+      colors: [bar],
       plotOptions: {
         bar: {
           borderRadius: 3,
@@ -94,17 +95,16 @@ const Graph: React.FC = () => {
         },
       },
       grid: {
-        borderColor: themeColors.line,
+        borderColor: background,
         strokeDashArray: 5,
         opacity: 0.7,
       },
       tooltip: {
         enabled: true,
         theme: "dark",
-
       },
     }),
-    [themeColors] 
+    [textcolor]
   );
 
   const series = [
@@ -118,7 +118,13 @@ const Graph: React.FC = () => {
     <div className="app bg-primary xl:p-2.5 rounded-xl shadow-lg w-full h-full -z-10">
       <div className="row">
         <div className="mixed-chart w-full">
-          <Chart options={options} series={series} type="bar" width="100%" height="393" />
+          <Chart
+            options={options}
+            series={series}
+            type="bar"
+            width="100%"
+            height="393"
+          />
         </div>
       </div>
     </div>

@@ -6,7 +6,7 @@
   :root {
     --background: #f9f7f7;
     --primary: #ffffff;
-    --secoundary: #f6f8fb;
+    --secondary: #eef2f7;
     --foreground: #313b5e;
     --hilights: #ffe2d5;
     --tertiary: #eae8e8;
@@ -16,7 +16,7 @@
   html.dark {
     --background: #22282eff;
     --primary: #282f36ff;
-    --secoundary: #2c343e;
+    --secondary: #2c343e;
     --foreground: #aab8c5;
     --hilights: #5e3e34;
     --tertiary: #2c3238;
