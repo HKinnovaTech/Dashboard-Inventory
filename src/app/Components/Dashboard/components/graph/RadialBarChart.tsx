@@ -13,7 +13,7 @@ const RadialBarChart: React.FC = () => {
   useEffect(() => {
     const updateColor = () => {
       const root = getComputedStyle(document.documentElement);
-      const color = root.getPropertyValue("--secondary").trim();
+      const color = root.getPropertyValue("--secondary2").trim();
       const textcolor = root.getPropertyValue("--foreground").trim();
       setSecondaryColor(color); 
       settextcolor(textcolor); 

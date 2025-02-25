@@ -25,12 +25,16 @@ const Dashboard = () => {
 
         <Graph />
       </div>
-      <div className="flex items-center justify-between">
-        <div>
-          <Weeklystats/>
+      <div className="flex items-center gap-6 justify-center w-full mt-6">
+        <div className="flex-1">
+          <Weeklystats />
         </div>
-        <div></div>
-        <div></div>
+        <div className="flex-1">
+          <Weeklystats />
+        </div>
+        <div className="flex-1">
+          <Weeklystats />
+        </div>
       </div>
     </div>
   );

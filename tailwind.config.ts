@@ -12,6 +12,7 @@ export default {
         background: "var(--background)",
         primary: "var(--primary)",
         secondary: "var(--secondary)",
+        secondary2: "var(--secondary2)",
         textcolor: "var(--text)",
         hilights: "var(--hilights)",
         tertiary: "var(--tertiary)",

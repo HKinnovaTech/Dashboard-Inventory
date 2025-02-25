@@ -3,7 +3,7 @@ import { FaCaretUp } from "react-icons/fa6";
 
 const InfoCard = (props) => {
   return (
-    <div className="max-h-[172px] bg-primary shadow-lg rounded-xl overflow-hidden flex flex-col justify-between">
+    <div className="max-h-[172px] overflow-hidden bg-primary shadow-lg rounded-xl flex flex-col justify-between -z-10">
       <div className="flex items-center justify-between p-7 ">
         <div className="bg-hilights rounded-xl p-3">
           <img src="/images/bucket.png" alt="Bucket" className="w-7 h-7" />

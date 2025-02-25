@@ -3,7 +3,7 @@ import RadialBarChart from './graph/RadialBarChart'
 
 const Weeklystats = () => {
   return (
-    <div className="bg-primary rounded-xl">
+    <div className="bg-primary rounded-xl p-7 shadow-lg">
           <RadialBarChart/>
           <div  className="flex justify-around">
             <div>
@@ -15,6 +15,7 @@ const Weeklystats = () => {
               <h2 className="text-2xl font-semibold">15.5k</h2>
             </div>
           </div>
+          <button className='w-full text-white py-2 mt-6 bg-secondary2 rounded-xl'>view details</button>
         </div>
   )
 }
