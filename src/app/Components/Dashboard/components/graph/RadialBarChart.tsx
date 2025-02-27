@@ -47,10 +47,10 @@ const RadialBarChart: React.FC = () => {
           name: {
             fontSize: "16px",
             color: textcolor,
-            offsetY: 120,
+            offsetY: 100,
           },
           value: {
-            offsetY: 76,
+            offsetY: 56,
             fontSize: "22px",
             color: textcolor,
             formatter: function (val: number) {
@@ -85,8 +85,8 @@ const RadialBarChart: React.FC = () => {
   const [series, setSeries] = useState<number[]>([67]);
 
   return (
-    <div className="p-4 rounded-lg max-w-[400px] mx-auto transition-colors duration-300">
-      <Chart options={options} series={series} type="radialBar" height={350} />
+    <div className=" rounded-lg max-w-[400px] mx-auto transition-colors duration-300">
+      <Chart options={options} series={series} type="radialBar" height={300} />
     </div>
   );
 };

@@ -3,6 +3,7 @@ import Infocard from "./components/infocard";
 import Graph from "./components/graph/graph";
 import RadialBarChart from "./components/graph/RadialBarChart";
 import Weeklystats from "./components/weeklystats";
+import Sessions from "./components/sessionsbycountry";
 
 const Dashboard = () => {
   return (
@@ -25,12 +26,12 @@ const Dashboard = () => {
 
         <Graph />
       </div>
-      <div className="flex items-center gap-6 justify-center w-full mt-6">
+      <div className="flex h-[464px] items-center gap-6 justify-center w-full mt-6">
         <div className="flex-1">
           <Weeklystats />
         </div>
         <div className="flex-1">
-          <Weeklystats />
+          <Sessions />
         </div>
         <div className="flex-1">
           <Weeklystats />
