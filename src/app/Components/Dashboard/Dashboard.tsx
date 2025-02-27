@@ -16,10 +16,10 @@ const Dashboard = () => {
             </p>
           </div>
           <div className="grid grid-cols-2 gap-5 ">
-            <Infocard />
-            <Infocard />
-            <Infocard />
-            <Infocard />
+            <Infocard lable="Total Orders" value="20,430" ratio="2.1" time="Last Week"/>
+            <Infocard lable="New Leads" value="9,393" ratio="2.4" time="Last Month"/>
+            <Infocard lable="Deals" value="923" ratio="3.1" time="Last Month"/>
+            <Infocard lable="Booked Revenue" value="$123.6K" ratio="2.3" time="Last month"/>
           </div>
         </div>
 

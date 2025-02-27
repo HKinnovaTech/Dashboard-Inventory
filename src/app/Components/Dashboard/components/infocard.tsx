@@ -1,7 +1,7 @@
 import React from "react";
 import { FaCaretUp } from "react-icons/fa6";
 
-const InfoCard = (props) => {
+const InfoCard = (props:any) => {
   return (
     <div className="max-h-[172px] overflow-hidden bg-primary shadow-lg rounded-xl flex flex-col justify-between -z-10">
       <div className="flex items-center justify-between p-7 ">
@@ -9,8 +9,8 @@ const InfoCard = (props) => {
           <img src="/images/bucket.png" alt="Bucket" className="w-7 h-7" />
         </div>
         <div>
-          <p className="text-textcolor">Total Orders</p>
-          <h2 className="text-3xl font-semibold">12,340</h2>
+          <p className="text-textcolor">{props.lable}</p>
+          <h2 className="text-3xl font-semibold">{props.value}</h2>
         </div>
       </div>
 
@@ -18,9 +18,9 @@ const InfoCard = (props) => {
         <div className="flex gap-3 text-sm">
           <div className="flex items-center space-x-1 text-green-500">
             <FaCaretUp size={18} />
-            <p>2.3%</p>
+            <p>{props.ratio}%</p>
           </div>
-          <p>Last Week</p>
+          <p>{props.time}</p>
         </div>
         <a href="#" className="text-textcolor text-sm">
           View More
