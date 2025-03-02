@@ -3,7 +3,7 @@ import WorldMap from './graph/WorldMap'
 
 const Sessions = () => {
   return (
-    <div className="bg-primary flex flex-col justify-between rounded-xl p-7 shadow-lg h-[464px] ">
+    <div className="bg-primary flex flex-col justify-between rounded-xl p-6 shadow-lg h-[464px] ">
       <h2 className="text-textcolor font-semibold">Sessions by Country</h2>
           <WorldMap/>
           <div  className="flex justify-around">
