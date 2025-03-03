@@ -1,6 +1,6 @@
 import React, { useMemo } from "react";
 
-const Toppages = () => {
+const Recentorders = () => {
   const data = [
     { pagepath: "larkon/ecommerce.html", views: 465, exitrate: 4.4 },
     { pagepath: "larkon/ecommerce.html", views: 465, exitrate: 12.4 },
@@ -25,9 +25,16 @@ const Toppages = () => {
       <table className="min-w-full mt-4">
           <thead>
             <tr className="bg-secondary text-xs text-left border-[#2f3944]">
-              <th className="px-6 py-4">Page Path</th>
-              <th className="px-4 py-4">Page Views</th>
-              <th className="px-4 py-4">Exit Rate</th>
+              <th className="px-6 py-4">Order ID</th>
+              <th className="px-4 py-4">Date</th>
+              <th className="px-4 py-4">Product</th>
+              <th className="px-4 py-4">Customer Name</th>
+              <th className="px-4 py-4">Email ID</th>
+              <th className="px-4 py-4">Phone no</th>
+              <th className="px-4 py-4">Address</th>
+              <th className="px-4 py-4">Payment Type</th>
+              <th className="px-4 py-4">Status</th>
+
             </tr>
           </thead>
           <tbody>
@@ -44,4 +51,4 @@ const Toppages = () => {
   );
 };
 
-export default Toppages;
+export default Recentorders;

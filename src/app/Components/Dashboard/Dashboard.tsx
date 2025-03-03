@@ -5,6 +5,7 @@ import RadialBarChart from "./components/graph/RadialBarChart";
 import Weeklystats from "./components/weeklystats";
 import Sessions from "./components/sessionsbycountry";
 import Toppages from "./components/Toppages";
+import Recentorders from "./components/Recntorders";
 
 const Dashboard = () => {
   return (
@@ -24,10 +25,9 @@ const Dashboard = () => {
             <Infocard lable="Booked Revenue" value="$123.6K" ratio="2.3" time="Last month"/>
           </div>
         </div>
-
         <Graph />
       </div>
-      <div className="flex h-[464px] items-center gap-6 justify-center w-full mt-6">
+      <div className="flex flex-col xl:flex-row h-[464px] items-center gap-6 justify-center w-full mt-6 -z-10">
         <div className="flex-1">
           <Weeklystats />
         </div>
@@ -37,6 +37,9 @@ const Dashboard = () => {
         <div className="flex-1">
           <Toppages />
         </div>
+      </div>
+      <div className="mt-6">
+        <Recentorders/>
       </div>
     </div>
   );

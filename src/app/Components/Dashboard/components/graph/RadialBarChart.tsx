@@ -85,7 +85,7 @@ const RadialBarChart: React.FC = () => {
   const [series, setSeries] = useState<number[]>([67]);
 
   return (
-    <div className=" rounded-lg max-w-[400px] mx-auto transition-colors duration-300">
+    <div className="relative rounded-lg max-w-[400px] mx-auto transition-colors duration-300">
       <Chart options={options} series={series} type="radialBar" height={300} />
     </div>
   );
