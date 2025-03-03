@@ -1,28 +1,52 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
+import { Menu, X } from "lucide-react";
 
-const navbar = () => {
+const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <div className="sticky top-0 min-w-[280px] bg-[#262d34] h-screen">
-      <div className="my-8">
-        <div>
-          <img src="/images/logo.png" alt="LOGO" className="h-10 mx-8" />
-        </div>
-        <div className="mt-12 mx-8">
-          <h3 className="text-xs text-[#656d79] font-bold">GENERAL</h3>
-        </div>
-        <div className="mt-6">
-          <div
-            className="group flex items-center gap-3 py-2 px-8 text-gray-400 hover:text-white  transition-all duration-300 border-l-2 border-transparent hover:border-orange-500"
-          >
-            <img src="../images/dashboard.png" alt="" className="w-5 h-5" />
-            <a href="/" className="font-semibold w-full h-full">
-              Dashboard
-            </a>
+    <div className="z-50">
+      {!isOpen && (
+        <button
+          className="xl:hidden fixed top-4 left-4 z-50 mt-5 bg-[#262d34] text-textcolor rounded-lg"
+          onClick={() => setIsOpen(true)}
+        >
+          <Menu size={24} />
+        </button>
+      )}
+
+      <div
+        className={`fixed top-0 left-0 h-screen bg-[#262d34] text-white transition-transform duration-300 ${
+          isOpen ? "translate-x-0" : "-translate-x-full"
+        } xl:translate-x-0 xl:min-w-[280px] xl:sticky xl:top-0`}
+      >
+        <div className="my-8">
+          <div className="flex justify-between items-center mx-8">
+            <img src="/images/logo.png" alt="LOGO" className="h-10" />
+          </div>
+          <div className="mt-12 mx-8">
+            <h3 className="text-xs text-[#656d79] font-bold">GENERAL</h3>
+          </div>
+          <div className="mt-6">
+            <div className="group flex items-center gap-3 py-2 px-8 text-gray-400 hover:text-white transition-all duration-300 border-l-2 border-transparent hover:border-orange-500">
+              <img src="/images/dashboard.png" alt="" className="w-5 h-5" />
+              <a href="/" className="font-semibold w-full h-full">
+                Dashboard
+              </a>
+            </div>
           </div>
         </div>
       </div>
+
+      {isOpen && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-50 xl:hidden"
+          onClick={() => setIsOpen(false)}
+        />
+      )}
     </div>
   );
 };
 
-export default navbar;
+export default Navbar;
