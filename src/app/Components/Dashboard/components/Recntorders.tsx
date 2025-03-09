@@ -5,7 +5,7 @@ const Recentorders = () => {
     {
       orderid: "#RB5625",
       date: "28 Aprial 2025",
-      product: "product image",
+      product: "./images/product-1.png",
       customername: "Anna Backer",
       email: "annabacker@gmail.com",
       phone: "(+1)-555-1564-261",
@@ -16,7 +16,7 @@ const Recentorders = () => {
     {
       orderid: "#R354R25",
       date: "28 Aprial 2025",
-      product: "product image",
+      product: "./images/product-2.png",
       customername: "Anna Backer",
       email: "annabacker@gmail.com",
       phone: "(+1)-555-1564-261",
@@ -28,7 +28,7 @@ const Recentorders = () => {
   return (
     <div className="bg-primary rounded-xl py-6 shadow-lg h-[464px] overflow-hidden">
       <div className="flex justify-between px-6 items-center">
-        <h2 className="text-textcolor font-semibold">Top Page</h2>
+        <h2 className="text-textcolor font-semibold">Recent Orders</h2>
         <a
           href=""
           className="text-[#ff6c2f] py-1.5 px-3 text-sm bg-[#3e3535] rounded-lg hover:"
@@ -61,7 +61,7 @@ const Recentorders = () => {
                 <a href="">{row.orderid}</a>
               </td>
               <td className="px-4 py-3">{row.date}</td>
-              <td className="px-4 py-3">{row.product}</td>
+              <td className="px-4 py-3"><img src={row.product} alt="" className="w-10 h-10 object-cover" /></td>
               <td className="px-4 py-3 text-messagetext">
                 <a href="">{row.customername}</a>
               </td>

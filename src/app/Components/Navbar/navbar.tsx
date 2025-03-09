@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
+import Dropdown from "./components/dropdown";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,24 +18,32 @@ const Navbar = () => {
       )}
 
       <div
-        className={`fixed top-0 left-0 h-screen bg-[#262d34] text-white transition-transform duration-300 ${
+        className={`fixed top-0 left-0 h-lvh min-h-svh bg-[#262d34] text-white transition-transform duration-300 ${
           isOpen ? "translate-x-0" : "-translate-x-full"
         } xl:translate-x-0 xl:min-w-[280px] xl:sticky xl:top-0`}
       >
-        <div className="my-8">
+        <div className="py-8">
           <div className="flex justify-between items-center mx-8">
             <img src="/images/logo.png" alt="LOGO" className="h-10" />
           </div>
           <div className="mt-12 mx-8">
             <h3 className="text-xs text-[#656d79] font-bold">GENERAL</h3>
           </div>
-          <div className="mt-6">
-            <div className="group flex items-center gap-3 py-2 px-8 text-gray-400 hover:text-white transition-all duration-300 border-l-2 border-transparent hover:border-orange-500">
+
+          <div className="mt-6 pr-6">
+            <div className="group flex items-center gap-4 py-3 px-8 text-gray-400 hover:text-white transition-all duration-300 border-l-2 border-transparent hover:border-orange-500">
               <img src="/images/dashboard.png" alt="" className="w-5 h-5" />
               <a href="/" className="font-semibold w-full h-full">
                 Dashboard
               </a>
             </div>
+
+            <Dropdown
+              image="product"
+              name={"Products"}
+              items={["List", "Grid", "Details", "Edit", "Create"]}
+              links={["/list", "/grid", "/details", "/edit", "/create"]}
+            />
           </div>
         </div>
       </div>

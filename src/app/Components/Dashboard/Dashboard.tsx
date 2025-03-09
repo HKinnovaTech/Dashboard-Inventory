@@ -1,14 +1,14 @@
 import React from "react";
 import Infocard from "./components/infocard";
 import Graph from "./components/graph/graph";
-import Weeklystats from "./components/weeklystats";
+import Conversions from "./components/conversions";
 import Sessions from "./components/sessionsbycountry";
 import Toppages from "./components/Toppages";
 import Recentorders from "./components/Recntorders";
 
 const Dashboard = () => {
   return (
-    <div className=" flex flex-col">
+    <div className="flex flex-col ">
       <div className="flex flex-col xl:flex-row gap-6 items-start justify-center">
         <div className="w-full ">
           <div className="w-full bg-hilights text-messagetext rounded-xl p-3 text-sm mb-5">
@@ -26,9 +26,10 @@ const Dashboard = () => {
         </div>
         <Graph />
       </div>
-      <div className="flex flex-col xl:flex-row h-[464px] items-center gap-6 justify-center w-full mt-6 ">
+
+      <div className="flex flex-col xl:flex-row xl:h-[464px] gap-6 justify-center w-full  mt-6 ">
         <div className="flex-1">
-          <Weeklystats />
+          <Conversions />
         </div>
         <div className="flex-1">
           <Sessions />
@@ -37,7 +38,8 @@ const Dashboard = () => {
           <Toppages />
         </div>
       </div>
-      <div className="mt-6">
+
+      <div className="my-6">
         <Recentorders/>
       </div>
     </div>

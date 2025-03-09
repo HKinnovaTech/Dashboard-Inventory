@@ -1,9 +1,9 @@
 import React from 'react'
 import RadialBarChart from './graph/RadialBarChart'
 
-const Weeklystats = () => {
+const Conversions = () => {
   return (
-    <div className="bg-primary rounded-xl p-6 shadow-lg h-[464px] ">
+    <div className="bg-primary rounded-xl p-6 shadow-lg h-[464px] w-full">
       <h2 className="text-textcolor font-semibold">Conversions</h2>
           <RadialBarChart/>
           <div  className="flex justify-around">
@@ -21,4 +21,4 @@ const Weeklystats = () => {
   )
 }
 
-export default Weeklystats
+export default Conversions

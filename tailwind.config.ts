@@ -16,7 +16,8 @@ export default {
         textcolor: "var(--text)",
         hilights: "var(--hilights)",
         tertiary: "var(--tertiary)",
-        messagetext: "var(--messagetext)"
+        messagetext: "var(--messagetext)",
+        textcol: "var(--textcolor)",
       },
     },
   },
