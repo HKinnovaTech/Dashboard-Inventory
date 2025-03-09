@@ -13,7 +13,7 @@ const Graph: React.FC = () => {
   const [background, setbackground] = useState("");
   const [textcolor, settextcolor] = useState("");
   const [bar, setbar] = useState("");
-
+        
   useEffect(() => {
     const updateThemeColors = () => {
       const root = getComputedStyle(document.documentElement);
@@ -115,7 +115,7 @@ const Graph: React.FC = () => {
   ];
 
   return (
-    <div className="app bg-primary rounded-xl shadow-lg w-full -z-10">
+    <div className="app bg-primary rounded-xl shadow-lg w-full ">
       <div className="row">
         <div className="mixed-chart w-full">
           <Chart

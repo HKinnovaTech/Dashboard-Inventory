@@ -1,7 +1,6 @@
 import React from "react";
 import Infocard from "./components/infocard";
 import Graph from "./components/graph/graph";
-import RadialBarChart from "./components/graph/RadialBarChart";
 import Weeklystats from "./components/weeklystats";
 import Sessions from "./components/sessionsbycountry";
 import Toppages from "./components/Toppages";
