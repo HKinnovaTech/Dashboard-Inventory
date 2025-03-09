@@ -2,13 +2,7 @@ import React, { useMemo } from "react";
 
 const Recentorders = () => {
   const data = [
-    { pagepath: "larkon/ecommerce.html", views: 465, exitrate: 4.4 },
-    { pagepath: "larkon/ecommerce.html", views: 465, exitrate: 12.4 },
-    { pagepath: "larkon/ecommerce.html", views: 465, exitrate: 4.4 },
-    { pagepath: "larkon/ecommerce.html", views: 465, exitrate: 4.4 },
-    { pagepath: "larkon/ecommerce.html", views: 465, exitrate: 30.4 },
-    { pagepath: "larkon/ecommerce.html", views: 465, exitrate: 4.4 },
-    { pagepath: "larkon/ecommerce.html", views: 465, exitrate: 4.4 },
+    { orderid: "#RB5625", date: "28 Aprial 2025", product: "product image", customername: "Anna Backer", email:"annabacker@gmail.com", phone: "(+1)-555-1564-261", address: "Burr Ridge/Illinois", paymenttype:"Credit Card", status: "Complete"},
   ];
   return (
     <div className="bg-primary rounded-xl py-6 shadow-lg h-[464px] overflow-hidden">
@@ -39,10 +33,16 @@ const Recentorders = () => {
           </thead>
           <tbody>
             {data.map((row) => (
-              <tr key={row.pagepath} className="bg-primary border-b-2 border-secondary hover:bg-[#272e35]">
-                <td className="px-6 py-3">{row.pagepath}</td>
-                <td className="px-4 py-3">{row.views}</td>
-                <td className="px-4 py-3 "><span className={` px-1.5 rounded-lg text-sm ${ row.exitrate < 10 ? "bg-[#264a3c] text-[#23c556]" :row.exitrate > 20 ? "bg-[#4a2626] text-[#ff4d4d]" : "bg-[#665b1e] text-[#ffd700]"}`}>{row.exitrate}%</span></td>
+              <tr key={row.orderid} className="bg-primary text-xs border-b-2 border-secondary hover:bg-[#272e35]">
+                <td className="px-6 py-3 text-messagetext"><a href="">{row.orderid}</a></td>
+                <td className="px-4 py-3">{row.date}</td>
+                <td className="px-4 py-3">{row.product}</td>
+                <td className="px-4 py-3 text-messagetext"><a href="">{row.customername}</a></td>
+                <td className="px-4 py-3">{row.email}</td>
+                <td className="px-4 py-3">{row.phone}</td>
+                <td className="px-4 py-3">{row.address}</td>
+                <td className="px-4 py-3">{row.paymenttype}</td>
+                <td className="px-4 py-3">{row.status}</td>
               </tr>
             ))}
           </tbody>
