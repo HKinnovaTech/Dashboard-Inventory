@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
 import Dropdown from "./components/dropdown";
+import Link from "next/link";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,9 +34,9 @@ const Navbar = () => {
           <div className="mt-6 pr-6">
             <div className="group flex items-center gap-4 py-3 px-8 text-gray-400 hover:text-white transition-all duration-300 border-l-2 border-transparent hover:border-orange-500">
               <img src="/images/dashboard.png" alt="" className="w-5 h-5" />
-              <a href="/" className="font-semibold w-full h-full">
+              <Link href="/" className="font-semibold w-full h-full">
                 Dashboard
-              </a>
+              </Link>
             </div>
 
             <Dropdown

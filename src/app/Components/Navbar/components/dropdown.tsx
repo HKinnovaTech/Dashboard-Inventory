@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { ChevronUpIcon, ChevronDownIcon } from "@heroicons/react/24/solid";
+import Link from "next/link";
 
 type ProductsDropdownProps = {
   items: string[];
@@ -32,8 +33,8 @@ const Dropdown = ({ items, links, name, image }: ProductsDropdownProps) => {
       {isOpen ? (
         <ul className="mt-2 space-y-4 text-sm ml-20 text-textcol">
             {items.map((item, index) =>
-          <li className="hover:translate-x-2 transition-transform duration-300">
-            <a href={links[index]}>{item}</a>
+          <li key={index} className="hover:translate-x-2 transition-transform duration-300">
+            <Link href={links[index]}>{item}</Link>
           </li>
             )}
         </ul>
