@@ -52,6 +52,7 @@ const Itemlist = () => {
             <th className="px-4 py-4">Action</th>
           </tr>
         </thead>
+        
         <tbody>
           {data.map((row) => (
             <tr
@@ -62,7 +63,7 @@ const Itemlist = () => {
                 type="checkbox" 
                 className="w-4 h-4 rounded cursor-pointer appearance-none bg-primary checked:bg-orange-500 border border-[#6d7781] checked:border-none after:absolute relative after:w-3 after:h-3 after:top-[2px] after:left-[2px] after:bg-[url('/images/check.png')] after:bg-center after:bg-contain after:bg-no-repeat after:hidden checked:after:block"
               /></td>
-              <td className="px-4 py-3">{row.productname} <br /> {row.productsize}</td>
+              <td className="px-4 py-3"> <img src="" className="" alt="" /><div>{row.productname} <br />Size:  {row.productsize}</div></td>
               <td className="px-4 py-3">{row.price}</td>
               <td className="px-4 py-3">{row.stock}</td>
               <td className="px-4 py-3">{row.category}</td>

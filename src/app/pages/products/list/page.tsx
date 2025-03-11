@@ -1,9 +1,10 @@
 import React from 'react'
 import Itemlist from './components/itemlist'
+import '../../../globals.css';
 
 const page = () => {
   return (
-    <div>
+    <div className='bodycontainer'>
       <Itemlist/>
     </div>
   )
