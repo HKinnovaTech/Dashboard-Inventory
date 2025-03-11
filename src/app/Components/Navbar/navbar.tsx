@@ -35,7 +35,7 @@ const Navbar = () => {
 
           <div className="mt-6 pr-6">
             <div className={`group flex items-center gap-4 py-3 px-8 transition-all duration-300 border-l-2 ${pathname === "/" ? "text-white border-orange-500" : "text-gray-400 border-transparent hover:text-white hover:border-orange-500"}`}>
-              <img src="/images/dashboard.png" alt="" className="w-5 h-5" />
+              <img src="/images/dashboard.png" alt="" className={`w-5 h-5 transition-all duration-300 ${pathname === "/" ? '' : 'grayscale hover:grayscale-0'}`} />
               <Link href="/" className="font-semibold w-full h-full">
                 Dashboard
               </Link>
@@ -48,6 +48,7 @@ const Navbar = () => {
               links={["/pages/products/list", "/pages/products/grid", "/pages/products/details", "/pages/products/edit", "/pages/products/create"]}
               currentPath={pathname}
             />
+            
             <Dropdown
               image="category"
               name={"Category"}

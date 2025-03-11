@@ -36,14 +36,14 @@ const Dropdown = ({ items, links, name, image, currentPath }: ProductsDropdownPr
             ? "text-white border-orange-500" 
             : "text-gray-400 border-transparent hover:text-white hover:border-orange-500"
         }`}>
-          <img src={`/images/${image}.png`} alt="" className="w-5 h-5" />
+          <img src={`/images/${image}.png`} alt="" className={`w-5 h-5 transition-all duration-300 ${isActive ? '' : 'grayscale hover:grayscale-0'}`} />
           <span className="font-semibold">{name}</span>
         </div>
 
         {isOpen ? (
-          <img src="/images/up-arrow.png" alt="" className="w-2.5 h-2.5 transition-transform duration-300"/>
+          <img src="/images/up-arrow.png" alt="" className="w-2.5 h-2.5 transition-transform duration-300 grayscale hover:grayscale-0"/>
         ) : (
-          <img src="/images/down-arrow.png" alt="" className="w-2.5 h-2.5 transition-transform duration-300"/>
+          <img src="/images/down-arrow.png" alt="" className="w-2.5 h-2.5 transition-transform duration-300 grayscale hover:grayscale-0"/>
         )}
       </div>
       <div className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
