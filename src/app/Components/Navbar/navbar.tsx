@@ -3,9 +3,11 @@ import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
 import Dropdown from "./components/dropdown";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname() ?? '/';
 
   return (
     <div className="z-50">
@@ -32,7 +34,7 @@ const Navbar = () => {
           </div>
 
           <div className="mt-6 pr-6">
-            <div className="group flex items-center gap-4 py-3 px-8 text-gray-400 hover:text-white transition-all duration-300 border-l-2 border-transparent hover:border-orange-500">
+            <div className={`group flex items-center gap-4 py-3 px-8 transition-all duration-300 border-l-2 ${pathname === "/" ? "text-white border-orange-500" : "text-gray-400 border-transparent hover:text-white hover:border-orange-500"}`}>
               <img src="/images/dashboard.png" alt="" className="w-5 h-5" />
               <Link href="/" className="font-semibold w-full h-full">
                 Dashboard
@@ -43,8 +45,17 @@ const Navbar = () => {
               image="product"
               name={"Products"}
               items={["List", "Grid", "Details", "Edit", "Create"]}
-              links={["/list", "/grid", "/details", "/edit", "/create"]}
+              links={["/pages/products/list", "/pages/products/grid", "/pages/products/details", "/pages/products/edit", "/pages/products/create"]}
+              currentPath={pathname}
             />
+            <Dropdown
+              image="category"
+              name={"Category"}
+              items={["List", "Edit", "Create"]}
+              links={["/pages/category/list", "/pages/category/edit", "/pages/category/create"]}
+              currentPath={pathname}
+            />
+
           </div>
         </div>
       </div>
