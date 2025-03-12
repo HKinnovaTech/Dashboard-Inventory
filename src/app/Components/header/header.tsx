@@ -10,7 +10,7 @@ import Userinfo from "./components/userinfo";
 const Header = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   return (
-    <div className="w-full z-50 sticky top-0 py-7 bg-background  text-center flex justify-between items-center  px-12">
+    <div className=" w-full max-w-[1581px] z-50 sticky top-0 py-7 bg-background  text-center flex justify-between items-center  px-12">
       <Pagename />
       <div className="flex items-center gap-6">
         <ThemeToggle />

@@ -36,4 +36,10 @@ body {
 
 .bodycontainer{
   padding: 0 48px;
+  width: 100%;
+  
+}
+.smallbodycontainer{
+  padding: 0 12px;
+  
 }

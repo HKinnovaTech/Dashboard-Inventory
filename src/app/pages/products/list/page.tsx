@@ -4,7 +4,7 @@ import '../../../globals.css';
 
 const page = () => {
   return (
-    <div className='bodycontainer'>
+    <div className=' mx-12'>
       <Itemlist/>
     </div>
   )
