@@ -21,7 +21,7 @@ const userinfo = () => {
       </button>
 
       <div
-        className={`absolute z-50 top-24 w-40 bg-primary border-2 border-secoundary text-textcolor shadow-lg rounded-lg overflow-hidden transform transition-all duration-500 ease-in-out ${
+        className={`absolute z-50 top-24 w-40 bg-primary border-2 border-secondary text-textcolor shadow-lg rounded-lg overflow-hidden transform transition-all duration-500 ease-in-out ${
           isDropdownOpen
             ? "translate-y-2 opacity-100"
             : "translate-y-0 opacity-0 pointer-events-none"
@@ -52,7 +52,7 @@ const userinfo = () => {
             Lock Screen
           </li>
         </ul>
-        <div className="border-b-2 border-secoundary ">
+        <div className="border-t-2 border-secondary ">
           <button className="w-full flex items-center px-4 py-2 text-red-400 hover:bg-primary ">
             <LogOut className="w-4 h-4 mr-2" />
             Logout

@@ -1,5 +1,7 @@
 "use client"
+import Link from "next/link";
 import React, { useState } from "react";
+import Thismonth from "./thismonth";
 
 const Itemlist = () => {
   const [selectedItems, setSelectedItems] = useState<string[]>([]);
@@ -49,15 +51,18 @@ const Itemlist = () => {
   };
 
   return (
-    <div className="bg-primary rounded-xl py-6 shadow-lg h-[464px] overflow-hidden">
+    <div className="bg-primary rounded-xl py-6 shadow-lg h-screen mb-8 overflow-hidden">
       <div className="flex justify-between px-6 items-center">
         <h2 className="text-textcolor font-semibold">Recent Orders</h2>
-        <a
+        <div className="flex gap-4">
+        <Link
           href=""
-          className="text-[#ff6c2f] py-1.5 px-3 text-sm bg-[#3e3535] rounded-lg hover:"
+          className="text-[#ff6c2f] py-1.5 px-3 text-sm bg-[#3e3535] rounded-lg"
         >
           Add Product
-        </a>
+        </Link>
+        <Thismonth/>
+        </div>
       </div>
 
       <table className="min-w-full mt-4">
@@ -100,10 +105,12 @@ const Itemlist = () => {
               <td className="px-4 py-3">{row.category}</td>
               <td className="px-4 py-3"><span className="bg-secondary px-2 py-1 rounded-lg">⭐{row.rating}</span> {row.Review} Review</td>
               <td className="px-4 py-3">
-                <div className="flex gap-3 ">
-                  <img src="/images/eye.png" className=" w-10 h-8 bg-secondary p-1 px-2 rounded-lg cursor-pointer" alt="" />
-                  <img src="/images/pencil.png" className=" w-10 h-8 bg-[#3e3535] p-2 px-3 rounded-lg cursor-pointer" alt="" />
-                  <img src="/images/bin.png" className=" w-10 h-8 bg-[#3c343a] p-2 px-3 rounded-lg cursor-pointer" alt="" />
+                <div className="flex gap-3">
+                  <div className="w-10 h-8 bg-secondary py-1 px-2 rounded-lg cursor-pointer">
+                    <img src="/images/vision.png" className="w-full h-full" alt="" />
+                  </div>
+                  <img src="/images/pencil.png" className="w-10 h-8 bg-[#3e3535] p-2 px-3 rounded-lg cursor-pointer" alt="" />
+                  <img src="/images/bin.png" className="w-10 h-8 bg-[#3c343a] p-2 px-3 rounded-lg cursor-pointer" alt="" />
                 </div>
               </td>
             </tr>
