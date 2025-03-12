@@ -94,8 +94,8 @@ const Itemlist = () => {
                   className="w-4 h-4 rounded cursor-pointer appearance-none bg-primary checked:bg-orange-500 border border-[#6d7781] checked:border-none after:absolute relative after:w-3 after:h-3 after:top-[2px] after:left-[2px] after:bg-[url('/images/check.png')] after:bg-center after:bg-contain after:bg-no-repeat after:hidden checked:after:block"
                 />
               </td>
-              <td className="px-4 py-3 flex items-center"> <img src="/images/p-1.png" className="w-14 h-14 bg-secondary rounded-xl mr-3  " alt="" /><div>{row.productname} <br /><span className="text-[#656d79] text-xs">Size: {row.productsize}</span></div></td>
-              <td className="px-4 py-3">${row.price}</td>
+              <td className="px-4 py-3 flex items-center"> <img src="/images/p-1.png" className="w-14 h-14 bg-secondary rounded-xl mr-3  " alt="" /><div>{row.productname} <br /><span className="text-gray-400 text-sm">Size: {row.productsize}</span></div></td>
+               <td className="px-4 py-3">${row.price}</td>
               <td className="px-4 py-3">{row.stock} Item Left<br /> <span className="text-[#656d79] text-xs">{row.sold} sold</span></td>
               <td className="px-4 py-3">{row.category}</td>
               <td className="px-4 py-3"><span className="bg-secondary px-2 py-1 rounded-lg">⭐{row.rating}</span> {row.Review} Review</td>
