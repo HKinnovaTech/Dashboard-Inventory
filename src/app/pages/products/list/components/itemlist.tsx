@@ -101,9 +101,9 @@ const Itemlist = () => {
               <td className="px-4 py-3"><span className="bg-secondary px-2 py-1 rounded-lg">⭐{row.rating}</span> {row.Review} Review</td>
               <td className="px-4 py-3">
                 <div className="flex gap-3 ">
-                  <img src="" className="bg-secondary py-4 px-5 rounded-lg cursor-pointer" alt="" />
-                  <img src="" className="bg-secondary py-4 px-5 rounded-lg cursor-pointer" alt="" />
-                  <img src="" className="bg-secondary py-4 px-5 rounded-lg cursor-pointer" alt="" />
+                  <img src="/images/eye.png" className=" w-10 h-8 bg-secondary p-1 px-2 rounded-lg cursor-pointer" alt="" />
+                  <img src="/images/pencil.png" className=" w-10 h-8 bg-[#3e3535] p-2 px-3 rounded-lg cursor-pointer" alt="" />
+                  <img src="/images/bin.png" className=" w-10 h-8 bg-[#3c343a] p-2 px-3 rounded-lg cursor-pointer" alt="" />
                 </div>
               </td>
             </tr>
